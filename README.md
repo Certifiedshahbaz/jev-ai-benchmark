@@ -110,9 +110,11 @@ jev_ai/
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
 | `GET` | `/api/health` | Health check and provider connectivity status |
-| `POST` | `/api/analyze` | Run single-ticket comparative analysis |
-| `POST` | `/api/benchmark/accuracy` | Execute batch accuracy benchmark |
-| `GET` | `/api/benchmark/runs` | Retrieve historical benchmark runs and stats |
+| `POST` | `/api/analyze` | Run single-ticket comparative analysis (Jev vs LLM) |
+| `POST` | `/api/benchmark/accuracy/start` | Start dual accuracy benchmark as background job |
+| `GET` | `/api/benchmark/accuracy/progress` | Poll progress of running benchmark |
+| `GET` | `/api/benchmark/accuracy/latest` | Retrieve latest completed benchmark run results |
+| `POST` | `/api/benchmark/accuracy` | Execute synchronous batch accuracy benchmark |
 
 ---
 
