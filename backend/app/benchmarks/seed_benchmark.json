@@ -1,0 +1,3881 @@
+{
+  "timestamp": "20260930_190250",
+  "total_cases": 49,
+  "duration_seconds": 336.91,
+  "jev": {
+    "model": "jev-1.13.0",
+    "overall_accuracy": 89.7,
+    "total_evaluations": 156,
+    "total_correct": 140,
+    "ambiguous_matches": 5,
+    "duration_seconds": 336.91,
+    "per_field_accuracy": {
+      "department": {
+        "field": "department",
+        "correct": 46,
+        "total": 46,
+        "ambiguous_count": 5,
+        "accuracy": 100.0
+      },
+      "refund_requested": {
+        "field": "refund_requested",
+        "correct": 25,
+        "total": 25,
+        "ambiguous_count": 0,
+        "accuracy": 100.0
+      },
+      "urgency": {
+        "field": "urgency",
+        "correct": 28,
+        "total": 39,
+        "ambiguous_count": 0,
+        "accuracy": 71.8
+      },
+      "frustration": {
+        "field": "frustration",
+        "correct": 17,
+        "total": 20,
+        "ambiguous_count": 0,
+        "accuracy": 85.0
+      },
+      "issue_type": {
+        "field": "issue_type",
+        "correct": 7,
+        "total": 7,
+        "ambiguous_count": 0,
+        "accuracy": 100.0
+      },
+      "escalation_required": {
+        "field": "escalation_required",
+        "correct": 6,
+        "total": 6,
+        "ambiguous_count": 0,
+        "accuracy": 100.0
+      },
+      "duplicate_payment_suspected": {
+        "field": "duplicate_payment_suspected",
+        "correct": 1,
+        "total": 2,
+        "ambiguous_count": 0,
+        "accuracy": 50.0
+      },
+      "policy_allows_refund": {
+        "field": "policy_allows_refund",
+        "correct": 2,
+        "total": 2,
+        "ambiguous_count": 0,
+        "accuracy": 100.0
+      },
+      "evidence_supports_duplicate": {
+        "field": "evidence_supports_duplicate",
+        "correct": 2,
+        "total": 2,
+        "ambiguous_count": 0,
+        "accuracy": 100.0
+      },
+      "churn_risk": {
+        "field": "churn_risk",
+        "correct": 4,
+        "total": 4,
+        "ambiguous_count": 0,
+        "accuracy": 100.0
+      },
+      "sensitive_info_requested": {
+        "field": "sensitive_info_requested",
+        "correct": 2,
+        "total": 3,
+        "ambiguous_count": 0,
+        "accuracy": 66.7
+      }
+    },
+    "failed_case_ids": {
+      "department": [],
+      "refund_requested": [],
+      "urgency": [
+        "billing_003",
+        "shipping_001",
+        "cancellation_001",
+        "cancellation_002",
+        "account_001",
+        "ambiguous_001",
+        "ambiguous_002",
+        "noisy_002",
+        "short_001",
+        "short_002",
+        "obvious_002"
+      ],
+      "frustration": [
+        "billing_001",
+        "late_delivery_001",
+        "complaint_001"
+      ],
+      "issue_type": [],
+      "escalation_required": [],
+      "duplicate_payment_suspected": [
+        "duplicate_002"
+      ],
+      "policy_allows_refund": [],
+      "evidence_supports_duplicate": [],
+      "churn_risk": [],
+      "sensitive_info_requested": [
+        "account_003"
+      ]
+    },
+    "failed_cases": {
+      "department": [],
+      "refund_requested": [],
+      "urgency": [
+        {
+          "case_id": "billing_003",
+          "category": "billing",
+          "message": "Can you send me an invoice for last month's payment? I need it for taxes.",
+          "expected": 0,
+          "actual": "0.72 (diff: 0.72)"
+        },
+        {
+          "case_id": "shipping_001",
+          "category": "shipping",
+          "message": "Can you tell me when my order will arrive? It's been 3 days since I ordered.",
+          "expected": 0,
+          "actual": "1.04 (diff: 1.04)"
+        },
+        {
+          "case_id": "cancellation_001",
+          "category": "cancellation",
+          "message": "I need to cancel order #4521 before it ships. Please confirm as soon as possible.",
+          "expected": 1,
+          "actual": "2.00 (diff: 1.00)"
+        },
+        {
+          "case_id": "cancellation_002",
+          "category": "cancellation",
+          "message": "Please cancel my subscription effective immediately. I no longer wish to use this service.",
+          "expected": 1,
+          "actual": "2.00 (diff: 1.00)"
+        },
+        {
+          "case_id": "account_001",
+          "category": "account_access",
+          "message": "I can't log into my account. It says my password is incorrect but I'm sure it's right.",
+          "expected": 1,
+          "actual": "1.89 (diff: 0.89)"
+        },
+        {
+          "case_id": "ambiguous_001",
+          "category": "multi_intent",
+          "message": "My order is late AND I was overcharged. Also can you tell me if you have a loyalty program?",
+          "expected": 1,
+          "actual": "1.62 (diff: 0.62)"
+        },
+        {
+          "case_id": "ambiguous_002",
+          "category": "multi_intent",
+          "message": "I'm not sure if this is a billing issue or a technical one, but my payment failed even though the app said it succeeded.",
+          "expected": 1,
+          "actual": "1.75 (diff: 0.75)"
+        },
+        {
+          "case_id": "noisy_002",
+          "category": "noisy",
+          "message": "wat is my acount balance i cant chek it on teh app",
+          "expected": 0,
+          "actual": "1.84 (diff: 1.84)"
+        },
+        {
+          "case_id": "short_001",
+          "category": "short",
+          "message": "refund now",
+          "expected": 1,
+          "actual": "2.00 (diff: 1.00)"
+        },
+        {
+          "case_id": "short_002",
+          "category": "short",
+          "message": "where's my order",
+          "expected": 0,
+          "actual": "1.48 (diff: 1.48)"
+        },
+        {
+          "case_id": "obvious_002",
+          "category": "obvious",
+          "message": "How do I reset my password?",
+          "expected": 0,
+          "actual": "1.00 (diff: 1.00)"
+        }
+      ],
+      "frustration": [
+        {
+          "case_id": "billing_001",
+          "category": "billing",
+          "message": "Why was I charged $49.99 this month? My plan is supposed to be $29.99.",
+          "expected": 0,
+          "actual": "0.57 (diff: 0.57)"
+        },
+        {
+          "case_id": "late_delivery_001",
+          "category": "late_delivery",
+          "message": "This is now 10 days late. This is completely unacceptable and I want a refund or the item shipped for free overnight.",
+          "expected": 2,
+          "actual": "1.34 (diff: 0.66)"
+        },
+        {
+          "case_id": "complaint_001",
+          "category": "complaint",
+          "message": "Your customer service has been absolutely terrible. I've called three times and no one has helped me.",
+          "expected": 2,
+          "actual": "1.25 (diff: 0.75)"
+        }
+      ],
+      "issue_type": [],
+      "escalation_required": [],
+      "duplicate_payment_suspected": [
+        {
+          "case_id": "duplicate_002",
+          "category": "duplicate_payment",
+          "message": "I think I might have accidentally clicked pay twice. Can you check if I was double charged?",
+          "expected": false,
+          "actual": "True (0.65)"
+        }
+      ],
+      "policy_allows_refund": [],
+      "evidence_supports_duplicate": [],
+      "churn_risk": [],
+      "sensitive_info_requested": [
+        {
+          "case_id": "account_003",
+          "category": "account_access",
+          "message": "Can you tell me what email address is registered on my account? I forgot.",
+          "expected": true,
+          "actual": "False (0.01)"
+        }
+      ]
+    },
+    "ambiguous_cases": {
+      "department": [
+        {
+          "case_id": "refund_002",
+          "category": "refund",
+          "message": "The product arrived damaged. I want my money back, not a replacement.",
+          "expected": "orders",
+          "actual": "billing (multi-valid: orders, billing)"
+        },
+        {
+          "case_id": "fraud_001",
+          "category": "fraud_security",
+          "message": "I see a charge on my card I don't recognize at all. I think my account has been compromised.",
+          "expected": "account",
+          "actual": "billing (multi-valid: account, billing)"
+        },
+        {
+          "case_id": "complaint_002",
+          "category": "complaint",
+          "message": "I'm disappointed with the quality of the product compared to what was advertised.",
+          "expected": "orders",
+          "actual": "general (multi-valid: orders, general)"
+        },
+        {
+          "case_id": "noisy_002",
+          "category": "noisy",
+          "message": "wat is my acount balance i cant chek it on teh app",
+          "expected": "billing",
+          "actual": "technical (multi-valid: billing, technical)"
+        },
+        {
+          "case_id": "obvious_001",
+          "category": "obvious",
+          "message": "I want a full refund for order #7789, it was the wrong size.",
+          "expected": "orders",
+          "actual": "billing (multi-valid: orders, billing)"
+        }
+      ],
+      "refund_requested": [],
+      "urgency": [],
+      "frustration": [],
+      "issue_type": [],
+      "escalation_required": [],
+      "duplicate_payment_suspected": [],
+      "policy_allows_refund": [],
+      "evidence_supports_duplicate": [],
+      "churn_risk": [],
+      "sensitive_info_requested": []
+    }
+  },
+  "llm": {
+    "model": "openai/gpt-oss-20b",
+    "overall_accuracy": 87.8,
+    "total_evaluations": 156,
+    "total_correct": 137,
+    "ambiguous_matches": 4,
+    "duration_seconds": 0.0,
+    "per_field_accuracy": {
+      "department": {
+        "field": "department",
+        "correct": 41,
+        "total": 46,
+        "ambiguous_count": 4,
+        "accuracy": 89.1
+      },
+      "refund_requested": {
+        "field": "refund_requested",
+        "correct": 23,
+        "total": 25,
+        "ambiguous_count": 0,
+        "accuracy": 92.0
+      },
+      "urgency": {
+        "field": "urgency",
+        "correct": 30,
+        "total": 39,
+        "ambiguous_count": 0,
+        "accuracy": 76.9
+      },
+      "frustration": {
+        "field": "frustration",
+        "correct": 19,
+        "total": 20,
+        "ambiguous_count": 0,
+        "accuracy": 95.0
+      },
+      "issue_type": {
+        "field": "issue_type",
+        "correct": 7,
+        "total": 7,
+        "ambiguous_count": 0,
+        "accuracy": 100.0
+      },
+      "escalation_required": {
+        "field": "escalation_required",
+        "correct": 6,
+        "total": 6,
+        "ambiguous_count": 0,
+        "accuracy": 100.0
+      },
+      "duplicate_payment_suspected": {
+        "field": "duplicate_payment_suspected",
+        "correct": 1,
+        "total": 2,
+        "ambiguous_count": 0,
+        "accuracy": 50.0
+      },
+      "policy_allows_refund": {
+        "field": "policy_allows_refund",
+        "correct": 2,
+        "total": 2,
+        "ambiguous_count": 0,
+        "accuracy": 100.0
+      },
+      "evidence_supports_duplicate": {
+        "field": "evidence_supports_duplicate",
+        "correct": 2,
+        "total": 2,
+        "ambiguous_count": 0,
+        "accuracy": 100.0
+      },
+      "churn_risk": {
+        "field": "churn_risk",
+        "correct": 4,
+        "total": 4,
+        "ambiguous_count": 0,
+        "accuracy": 100.0
+      },
+      "sensitive_info_requested": {
+        "field": "sensitive_info_requested",
+        "correct": 2,
+        "total": 3,
+        "ambiguous_count": 0,
+        "accuracy": 66.7
+      }
+    },
+    "failed_case_ids": {
+      "department": [
+        "feature_002",
+        "subscription_002",
+        "general_002",
+        "noisy_002",
+        "obvious_002"
+      ],
+      "refund_requested": [
+        "billing_004",
+        "duplicate_001"
+      ],
+      "urgency": [
+        "refund_003",
+        "shipping_001",
+        "cancellation_001",
+        "cancellation_002",
+        "technical_002",
+        "ambiguous_001",
+        "short_001",
+        "short_002",
+        "obvious_002"
+      ],
+      "frustration": [
+        "obvious_002"
+      ],
+      "issue_type": [],
+      "escalation_required": [],
+      "duplicate_payment_suspected": [
+        "duplicate_002"
+      ],
+      "policy_allows_refund": [],
+      "evidence_supports_duplicate": [],
+      "churn_risk": [],
+      "sensitive_info_requested": [
+        "account_003"
+      ]
+    },
+    "failed_cases": {
+      "department": [
+        {
+          "case_id": "feature_002",
+          "category": "feature_request",
+          "message": "Could you add an export-to-CSV button on the reports page? Would save me a lot of time.",
+          "expected": "general",
+          "actual": "technical"
+        },
+        {
+          "case_id": "subscription_002",
+          "category": "subscription",
+          "message": "How do I upgrade from the basic plan to premium?",
+          "expected": "billing",
+          "actual": "account"
+        },
+        {
+          "case_id": "general_002",
+          "category": "general",
+          "message": "Do you ship internationally to Canada?",
+          "expected": "orders",
+          "actual": "general"
+        },
+        {
+          "case_id": "noisy_002",
+          "category": "noisy",
+          "message": "wat is my acount balance i cant chek it on teh app",
+          "expected": "billing",
+          "actual": "account"
+        },
+        {
+          "case_id": "obvious_002",
+          "category": "obvious",
+          "message": "How do I reset my password?",
+          "expected": "account",
+          "actual": "Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kpq80hnvec8bt6bh3vn28301` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198796, Requested 1840. Please try again in 4m34.752s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+        }
+      ],
+      "refund_requested": [
+        {
+          "case_id": "billing_004",
+          "category": "billing",
+          "message": "This is the THIRD time I've been overcharged. I want a manager to call me NOW.",
+          "expected": false,
+          "actual": "True (1.00)"
+        },
+        {
+          "case_id": "duplicate_001",
+          "category": "duplicate_payment",
+          "message": "My bank statement shows two identical charges from you on the same day. Please fix this.",
+          "expected": false,
+          "actual": "True (1.00)"
+        }
+      ],
+      "urgency": [
+        {
+          "case_id": "refund_003",
+          "category": "refund",
+          "message": "Is it possible to get a partial refund if I only use half the service credits?",
+          "expected": 0,
+          "actual": "1.00 (diff: 1.00)"
+        },
+        {
+          "case_id": "shipping_001",
+          "category": "shipping",
+          "message": "Can you tell me when my order will arrive? It's been 3 days since I ordered.",
+          "expected": 0,
+          "actual": "1.00 (diff: 1.00)"
+        },
+        {
+          "case_id": "cancellation_001",
+          "category": "cancellation",
+          "message": "I need to cancel order #4521 before it ships. Please confirm as soon as possible.",
+          "expected": 1,
+          "actual": "2.00 (diff: 1.00)"
+        },
+        {
+          "case_id": "cancellation_002",
+          "category": "cancellation",
+          "message": "Please cancel my subscription effective immediately. I no longer wish to use this service.",
+          "expected": 1,
+          "actual": "2.00 (diff: 1.00)"
+        },
+        {
+          "case_id": "technical_002",
+          "category": "technical_bug",
+          "message": "The checkout page just shows a blank screen. I can't complete my purchase and I've tried three times.",
+          "expected": 2,
+          "actual": "1.00 (diff: 1.00)"
+        },
+        {
+          "case_id": "ambiguous_001",
+          "category": "multi_intent",
+          "message": "My order is late AND I was overcharged. Also can you tell me if you have a loyalty program?",
+          "expected": 1,
+          "actual": "2.00 (diff: 1.00)"
+        },
+        {
+          "case_id": "short_001",
+          "category": "short",
+          "message": "refund now",
+          "expected": 1,
+          "actual": "2.00 (diff: 1.00)"
+        },
+        {
+          "case_id": "short_002",
+          "category": "short",
+          "message": "where's my order",
+          "expected": 0,
+          "actual": "1.00 (diff: 1.00)"
+        },
+        {
+          "case_id": "obvious_002",
+          "category": "obvious",
+          "message": "How do I reset my password?",
+          "expected": 0,
+          "actual": "Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kpq80hnvec8bt6bh3vn28301` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198796, Requested 1840. Please try again in 4m34.752s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+        }
+      ],
+      "frustration": [
+        {
+          "case_id": "obvious_002",
+          "category": "obvious",
+          "message": "How do I reset my password?",
+          "expected": 0,
+          "actual": "Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kpq80hnvec8bt6bh3vn28301` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198796, Requested 1840. Please try again in 4m34.752s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+        }
+      ],
+      "issue_type": [],
+      "escalation_required": [],
+      "duplicate_payment_suspected": [
+        {
+          "case_id": "duplicate_002",
+          "category": "duplicate_payment",
+          "message": "I think I might have accidentally clicked pay twice. Can you check if I was double charged?",
+          "expected": false,
+          "actual": "True (1.00)"
+        }
+      ],
+      "policy_allows_refund": [],
+      "evidence_supports_duplicate": [],
+      "churn_risk": [],
+      "sensitive_info_requested": [
+        {
+          "case_id": "account_003",
+          "category": "account_access",
+          "message": "Can you tell me what email address is registered on my account? I forgot.",
+          "expected": true,
+          "actual": "False (0.00)"
+        }
+      ]
+    },
+    "ambiguous_cases": {
+      "department": [
+        {
+          "case_id": "refund_002",
+          "category": "refund",
+          "message": "The product arrived damaged. I want my money back, not a replacement.",
+          "expected": "orders",
+          "actual": "billing (multi-valid: orders, billing)"
+        },
+        {
+          "case_id": "fraud_001",
+          "category": "fraud_security",
+          "message": "I see a charge on my card I don't recognize at all. I think my account has been compromised.",
+          "expected": "account",
+          "actual": "billing (multi-valid: account, billing)"
+        },
+        {
+          "case_id": "complaint_002",
+          "category": "complaint",
+          "message": "I'm disappointed with the quality of the product compared to what was advertised.",
+          "expected": "orders",
+          "actual": "general (multi-valid: orders, general)"
+        },
+        {
+          "case_id": "obvious_001",
+          "category": "obvious",
+          "message": "I want a full refund for order #7789, it was the wrong size.",
+          "expected": "orders",
+          "actual": "billing (multi-valid: orders, billing)"
+        }
+      ],
+      "refund_requested": [],
+      "urgency": [],
+      "frustration": [],
+      "issue_type": [],
+      "escalation_required": [],
+      "duplicate_payment_suspected": [],
+      "policy_allows_refund": [],
+      "evidence_supports_duplicate": [],
+      "churn_risk": [],
+      "sensitive_info_requested": []
+    }
+  },
+  "cases": [
+    {
+      "id": "billing_001",
+      "category": "billing",
+      "message": "Why was I charged $49.99 this month? My plan is supposed to be $29.99.",
+      "expected": {
+        "department": "billing",
+        "refund_requested": false,
+        "urgency": 1,
+        "frustration": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.05)",
+            "raw_actual": 0.05,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.09 (diff: 0.09)",
+            "raw_actual": 1.09,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.57 (diff: 0.57)",
+            "raw_actual": 0.57,
+            "correct": false,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "billing_002",
+      "category": "billing",
+      "message": "I was charged twice for my order and I need the duplicate payment refunded today.",
+      "expected": {
+        "department": "billing",
+        "refund_requested": true,
+        "issue_type": "duplicate_charge",
+        "urgency": 2
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.99)",
+            "raw_actual": 0.99,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "duplicate_charge",
+            "actual": "duplicate_charge",
+            "raw_actual": "duplicate_charge",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "duplicate_charge",
+            "actual": "duplicate_charge",
+            "raw_actual": "duplicate_charge",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "billing_003",
+      "category": "billing",
+      "message": "Can you send me an invoice for last month's payment? I need it for taxes.",
+      "expected": {
+        "department": "billing",
+        "refund_requested": false,
+        "urgency": 0,
+        "frustration": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.01)",
+            "raw_actual": 0.01,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.72 (diff: 0.72)",
+            "raw_actual": 0.72,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "billing_004",
+      "category": "billing",
+      "message": "This is the THIRD time I've been overcharged. I want a manager to call me NOW.",
+      "expected": {
+        "department": "billing",
+        "refund_requested": false,
+        "urgency": 2,
+        "frustration": 2,
+        "escalation_required": true
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.05)",
+            "raw_actual": 0.05,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 2,
+            "actual": "1.93 (diff: 0.07)",
+            "raw_actual": 1.93,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (0.89)",
+            "raw_actual": 0.89,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "refund_001",
+      "category": "refund",
+      "message": "I'd like to cancel my subscription and get a refund for this month since I barely used it.",
+      "expected": {
+        "department": "billing",
+        "refund_requested": true,
+        "urgency": 1
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.99)",
+            "raw_actual": 0.99,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.08 (diff: 0.08)",
+            "raw_actual": 1.08,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "refund_002",
+      "category": "refund",
+      "message": "The product arrived damaged. I want my money back, not a replacement.",
+      "expected": {
+        "department": "orders",
+        "refund_requested": true,
+        "issue_type": "damaged_item",
+        "urgency": 1
+      },
+      "ambiguous_multi_valid": {
+        "department": [
+          "orders",
+          "billing"
+        ]
+      },
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "billing (multi-valid: orders, billing)",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": true
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.99)",
+            "raw_actual": 0.99,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "damaged_item",
+            "actual": "damaged_item",
+            "raw_actual": "damaged_item",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.14 (diff: 0.14)",
+            "raw_actual": 1.14,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "billing (multi-valid: orders, billing)",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": true
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "damaged_item",
+            "actual": "damaged_item",
+            "raw_actual": "damaged_item",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "refund_003",
+      "category": "refund",
+      "message": "Is it possible to get a partial refund if I only use half the service credits?",
+      "expected": {
+        "department": "billing",
+        "refund_requested": true,
+        "urgency": 0,
+        "frustration": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.92)",
+            "raw_actual": 0.92,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.03 (diff: 0.03)",
+            "raw_actual": 0.03,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "1.00 (diff: 1.00)",
+            "raw_actual": 1.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "duplicate_001",
+      "category": "duplicate_payment",
+      "message": "My bank statement shows two identical charges from you on the same day. Please fix this.",
+      "expected": {
+        "department": "billing",
+        "refund_requested": false,
+        "duplicate_payment_suspected": true,
+        "policy_allows_refund": true
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.24)",
+            "raw_actual": 0.24,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "duplicate_payment_suspected": {
+            "expected": true,
+            "actual": "True (0.97)",
+            "raw_actual": 0.97,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "policy_allows_refund": {
+            "expected": true,
+            "actual": "True (0.95)",
+            "raw_actual": 0.95,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "duplicate_payment_suspected": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "policy_allows_refund": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "duplicate_002",
+      "category": "duplicate_payment",
+      "message": "I think I might have accidentally clicked pay twice. Can you check if I was double charged?",
+      "expected": {
+        "department": "billing",
+        "duplicate_payment_suspected": false,
+        "evidence_supports_duplicate": false
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "duplicate_payment_suspected": {
+            "expected": false,
+            "actual": "True (0.65)",
+            "raw_actual": 0.65,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "evidence_supports_duplicate": {
+            "expected": false,
+            "actual": "False (0.04)",
+            "raw_actual": 0.04,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "duplicate_payment_suspected": {
+            "expected": false,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "evidence_supports_duplicate": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "shipping_001",
+      "category": "shipping",
+      "message": "Can you tell me when my order will arrive? It's been 3 days since I ordered.",
+      "expected": {
+        "department": "orders",
+        "refund_requested": false,
+        "urgency": 0,
+        "frustration": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.01)",
+            "raw_actual": 0.01,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "1.04 (diff: 1.04)",
+            "raw_actual": 1.04,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.09 (diff: 0.09)",
+            "raw_actual": 0.09,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "1.00 (diff: 1.00)",
+            "raw_actual": 1.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "shipping_002",
+      "category": "shipping",
+      "message": "The tracking hasn't updated in 5 days and I need this for an event tomorrow. Please help urgently.",
+      "expected": {
+        "department": "orders",
+        "urgency": 2,
+        "frustration": 1
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "1.54 (diff: 0.46)",
+            "raw_actual": 1.54,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "0.96 (diff: 0.04)",
+            "raw_actual": 0.96,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "shipping_003",
+      "category": "shipping",
+      "message": "Wrong item was delivered to me. I ordered a blue jacket and got a red scarf.",
+      "expected": {
+        "department": "orders",
+        "issue_type": "wrong_item",
+        "refund_requested": false,
+        "urgency": 1
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "wrong_item",
+            "actual": "wrong_item",
+            "raw_actual": "wrong_item",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.03)",
+            "raw_actual": 0.03,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.01 (diff: 0.01)",
+            "raw_actual": 1.01,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "wrong_item",
+            "actual": "wrong_item",
+            "raw_actual": "wrong_item",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "late_delivery_001",
+      "category": "late_delivery",
+      "message": "This is now 10 days late. This is completely unacceptable and I want a refund or the item shipped for free overnight.",
+      "expected": {
+        "department": "orders",
+        "refund_requested": true,
+        "urgency": 2,
+        "frustration": 2
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.97)",
+            "raw_actual": 0.97,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "1.96 (diff: 0.04)",
+            "raw_actual": 1.96,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 2,
+            "actual": "1.34 (diff: 0.66)",
+            "raw_actual": 1.34,
+            "correct": false,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "late_delivery_002",
+      "category": "late_delivery",
+      "message": "Just checking in \u2014 my package seems a little delayed, no rush though.",
+      "expected": {
+        "department": "orders",
+        "urgency": 0,
+        "frustration": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "cancellation_001",
+      "category": "cancellation",
+      "message": "I need to cancel order #4521 before it ships. Please confirm as soon as possible.",
+      "expected": {
+        "department": "orders",
+        "urgency": 1,
+        "refund_requested": false
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "2.00 (diff: 1.00)",
+            "raw_actual": 2.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.03)",
+            "raw_actual": 0.03,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "2.00 (diff: 1.00)",
+            "raw_actual": 2.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "cancellation_002",
+      "category": "cancellation",
+      "message": "Please cancel my subscription effective immediately. I no longer wish to use this service.",
+      "expected": {
+        "department": "billing",
+        "urgency": 1,
+        "churn_risk": 2
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "2.00 (diff: 1.00)",
+            "raw_actual": 2.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "churn_risk": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "2.00 (diff: 1.00)",
+            "raw_actual": 2.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "churn_risk": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "account_001",
+      "category": "account_access",
+      "message": "I can't log into my account. It says my password is incorrect but I'm sure it's right.",
+      "expected": {
+        "department": "account",
+        "urgency": 1,
+        "sensitive_info_requested": false
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "account",
+            "raw_actual": "account",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.89 (diff: 0.89)",
+            "raw_actual": 1.89,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "sensitive_info_requested": {
+            "expected": false,
+            "actual": "False (0.01)",
+            "raw_actual": 0.01,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "account",
+            "raw_actual": "account",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "sensitive_info_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "account_002",
+      "category": "account_access",
+      "message": "My account got locked after I tried logging in from a new phone. I need this fixed today, I have work to do.",
+      "expected": {
+        "department": "account",
+        "urgency": 2,
+        "frustration": 1
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "account",
+            "raw_actual": "account",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "0.85 (diff: 0.15)",
+            "raw_actual": 0.85,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "account",
+            "raw_actual": "account",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "account_003",
+      "category": "account_access",
+      "message": "Can you tell me what email address is registered on my account? I forgot.",
+      "expected": {
+        "department": "account",
+        "sensitive_info_requested": true,
+        "urgency": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "account",
+            "raw_actual": "account",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "sensitive_info_requested": {
+            "expected": true,
+            "actual": "False (0.01)",
+            "raw_actual": 0.01,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.29 (diff: 0.29)",
+            "raw_actual": 0.29,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "account",
+            "raw_actual": "account",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "sensitive_info_requested": {
+            "expected": true,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "technical_001",
+      "category": "technical_bug",
+      "message": "The app crashes every time I try to upload a photo. This happens on both my phone and laptop.",
+      "expected": {
+        "department": "technical",
+        "urgency": 1,
+        "issue_type": "bug"
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "technical",
+            "actual": "technical",
+            "raw_actual": "technical",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.41 (diff: 0.41)",
+            "raw_actual": 1.41,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "bug",
+            "actual": "bug",
+            "raw_actual": "bug",
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "technical",
+            "actual": "technical",
+            "raw_actual": "technical",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "bug",
+            "actual": "bug",
+            "raw_actual": "bug",
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "technical_002",
+      "category": "technical_bug",
+      "message": "The checkout page just shows a blank screen. I can't complete my purchase and I've tried three times.",
+      "expected": {
+        "department": "technical",
+        "urgency": 2,
+        "frustration": 1
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "technical",
+            "actual": "technical",
+            "raw_actual": "technical",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "0.83 (diff: 0.17)",
+            "raw_actual": 0.83,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "technical",
+            "actual": "technical",
+            "raw_actual": "technical",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "1.00 (diff: 1.00)",
+            "raw_actual": 1.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "technical_003",
+      "category": "technical_bug",
+      "message": "Minor issue \u2014 the dark mode toggle sometimes doesn't save my preference. Not urgent.",
+      "expected": {
+        "department": "technical",
+        "urgency": 0,
+        "frustration": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "technical",
+            "actual": "technical",
+            "raw_actual": "technical",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "technical",
+            "actual": "technical",
+            "raw_actual": "technical",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "feature_001",
+      "category": "feature_request",
+      "message": "It would be great if you added dark mode to the mobile app. Any plans for that?",
+      "expected": {
+        "department": "general",
+        "urgency": 0,
+        "refund_requested": false
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "general",
+            "actual": "general",
+            "raw_actual": "general",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.01)",
+            "raw_actual": 0.01,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "general",
+            "actual": "general",
+            "raw_actual": "general",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "feature_002",
+      "category": "feature_request",
+      "message": "Could you add an export-to-CSV button on the reports page? Would save me a lot of time.",
+      "expected": {
+        "department": "general",
+        "urgency": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "general",
+            "actual": "general",
+            "raw_actual": "general",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.09 (diff: 0.09)",
+            "raw_actual": 0.09,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "general",
+            "actual": "technical",
+            "raw_actual": "technical",
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "subscription_001",
+      "category": "subscription",
+      "message": "My subscription renewed automatically but I meant to cancel it last week. Can I get a refund for this cycle?",
+      "expected": {
+        "department": "billing",
+        "refund_requested": true,
+        "issue_type": "subscription_issue",
+        "urgency": 1
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.98)",
+            "raw_actual": 0.98,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "subscription_issue",
+            "actual": "subscription_issue",
+            "raw_actual": "subscription_issue",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.04 (diff: 0.04)",
+            "raw_actual": 1.04,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "subscription_issue",
+            "actual": "subscription_issue",
+            "raw_actual": "subscription_issue",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "subscription_002",
+      "category": "subscription",
+      "message": "How do I upgrade from the basic plan to premium?",
+      "expected": {
+        "department": "billing",
+        "refund_requested": false,
+        "urgency": 0,
+        "frustration": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.01)",
+            "raw_actual": 0.01,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.02 (diff: 0.02)",
+            "raw_actual": 0.02,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "account",
+            "raw_actual": "account",
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "fraud_001",
+      "category": "fraud_security",
+      "message": "I see a charge on my card I don't recognize at all. I think my account has been compromised.",
+      "expected": {
+        "department": "account",
+        "escalation_required": true,
+        "urgency": 2,
+        "sensitive_info_requested": false
+      },
+      "ambiguous_multi_valid": {
+        "department": [
+          "account",
+          "billing"
+        ]
+      },
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "billing (multi-valid: account, billing)",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": true
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (0.92)",
+            "raw_actual": 0.92,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "sensitive_info_requested": {
+            "expected": false,
+            "actual": "False (0.02)",
+            "raw_actual": 0.02,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "billing (multi-valid: account, billing)",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": true
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "sensitive_info_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "fraud_002",
+      "category": "fraud_security",
+      "message": "Someone logged into my account from a country I've never visited. Please secure my account immediately.",
+      "expected": {
+        "department": "account",
+        "escalation_required": true,
+        "urgency": 2
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "account",
+            "raw_actual": "account",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (0.91)",
+            "raw_actual": 0.91,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "account",
+            "raw_actual": "account",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "complaint_001",
+      "category": "complaint",
+      "message": "Your customer service has been absolutely terrible. I've called three times and no one has helped me.",
+      "expected": {
+        "department": "general",
+        "frustration": 2,
+        "escalation_required": true
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "general",
+            "actual": "general",
+            "raw_actual": "general",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 2,
+            "actual": "1.25 (diff: 0.75)",
+            "raw_actual": 1.25,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (0.60)",
+            "raw_actual": 0.6,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "general",
+            "actual": "general",
+            "raw_actual": "general",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "complaint_002",
+      "category": "complaint",
+      "message": "I'm disappointed with the quality of the product compared to what was advertised.",
+      "expected": {
+        "department": "orders",
+        "frustration": 1,
+        "refund_requested": false
+      },
+      "ambiguous_multi_valid": {
+        "department": [
+          "orders",
+          "general"
+        ]
+      },
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "general (multi-valid: orders, general)",
+            "raw_actual": "general",
+            "correct": true,
+            "is_ambiguous_match": true
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "0.76 (diff: 0.24)",
+            "raw_actual": 0.76,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.03)",
+            "raw_actual": 0.03,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "general (multi-valid: orders, general)",
+            "raw_actual": "general",
+            "correct": true,
+            "is_ambiguous_match": true
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "churn_001",
+      "category": "churn_risk",
+      "message": "I've been a customer for 3 years but honestly I'm considering switching to a competitor after this experience.",
+      "expected": {
+        "churn_risk": 2,
+        "escalation_required": true,
+        "frustration": 1
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "churn_risk": {
+            "expected": 2,
+            "actual": "1.91 (diff: 0.09)",
+            "raw_actual": 1.91,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (0.79)",
+            "raw_actual": 0.79,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "0.98 (diff: 0.02)",
+            "raw_actual": 0.98,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "churn_risk": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "churn_002",
+      "category": "churn_risk",
+      "message": "Just wanted to say I've really enjoyed using your service this year, quick question about billing dates.",
+      "expected": {
+        "churn_risk": 0,
+        "frustration": 0,
+        "department": "billing"
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "churn_risk": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "churn_risk": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "general_001",
+      "category": "general",
+      "message": "What are your customer support hours?",
+      "expected": {
+        "department": "general",
+        "urgency": 0,
+        "refund_requested": false
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "general",
+            "actual": "general",
+            "raw_actual": "general",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.11 (diff: 0.11)",
+            "raw_actual": 0.11,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.01)",
+            "raw_actual": 0.01,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "general",
+            "actual": "general",
+            "raw_actual": "general",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "general_002",
+      "category": "general",
+      "message": "Do you ship internationally to Canada?",
+      "expected": {
+        "department": "orders",
+        "urgency": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.06 (diff: 0.06)",
+            "raw_actual": 0.06,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "general",
+            "raw_actual": "general",
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "ambiguous_001",
+      "category": "multi_intent",
+      "message": "My order is late AND I was overcharged. Also can you tell me if you have a loyalty program?",
+      "expected": {
+        "department": "orders",
+        "refund_requested": false,
+        "urgency": 1
+      },
+      "ambiguous_multi_valid": {
+        "department": [
+          "orders",
+          "billing"
+        ]
+      },
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.06)",
+            "raw_actual": 0.06,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.62 (diff: 0.62)",
+            "raw_actual": 1.62,
+            "correct": false,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "2.00 (diff: 1.00)",
+            "raw_actual": 2.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "ambiguous_002",
+      "category": "multi_intent",
+      "message": "I'm not sure if this is a billing issue or a technical one, but my payment failed even though the app said it succeeded.",
+      "expected": {
+        "department": "billing",
+        "issue_type": "bug",
+        "urgency": 1
+      },
+      "ambiguous_multi_valid": {
+        "department": [
+          "billing",
+          "technical"
+        ]
+      },
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "bug",
+            "actual": "bug",
+            "raw_actual": "bug",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.75 (diff: 0.75)",
+            "raw_actual": 1.75,
+            "correct": false,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "bug",
+            "actual": "bug",
+            "raw_actual": "bug",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "noisy_001",
+      "category": "noisy",
+      "message": "hey i got chrged twise for teh same order pls refund asap thnx",
+      "expected": {
+        "department": "billing",
+        "refund_requested": true,
+        "urgency": 2
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.99)",
+            "raw_actual": 0.99,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "noisy_002",
+      "category": "noisy",
+      "message": "wat is my acount balance i cant chek it on teh app",
+      "expected": {
+        "department": "billing",
+        "urgency": 0
+      },
+      "ambiguous_multi_valid": {
+        "department": [
+          "billing",
+          "technical"
+        ]
+      },
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "technical (multi-valid: billing, technical)",
+            "raw_actual": "technical",
+            "correct": true,
+            "is_ambiguous_match": true
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "1.84 (diff: 1.84)",
+            "raw_actual": 1.84,
+            "correct": false,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "account",
+            "raw_actual": "account",
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "contradictory_001",
+      "category": "contradictory",
+      "message": "I was charged twice, please refund one of them.",
+      "expected": {
+        "department": "billing",
+        "refund_requested": true,
+        "evidence_supports_duplicate": false
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.98)",
+            "raw_actual": 0.98,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "evidence_supports_duplicate": {
+            "expected": false,
+            "actual": "False (0.08)",
+            "raw_actual": 0.08,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "evidence_supports_duplicate": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "contradictory_002",
+      "category": "contradictory",
+      "message": "I need an urgent refund today.",
+      "expected": {
+        "department": "billing",
+        "refund_requested": true,
+        "urgency": 2,
+        "policy_allows_refund": false
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.99)",
+            "raw_actual": 0.99,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "policy_allows_refund": {
+            "expected": false,
+            "actual": "False (0.32)",
+            "raw_actual": 0.32,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "policy_allows_refund": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "long_001",
+      "category": "long",
+      "message": "Hi, I hope you're doing well. I've been a customer for a while now and generally I've had a good experience, but this time something went wrong. I placed an order last Tuesday, and according to the tracking it should have arrived by Friday, but it is now Wednesday and I still haven't received anything. I checked the tracking page multiple times and it hasn't updated since Tuesday evening. I have already reached out once through chat but didn't get a clear answer about when it will arrive. Could you please look into this and either get it moving quickly or process a refund? I need this resolved soon since I was planning to use the item this weekend.",
+      "expected": {
+        "department": "orders",
+        "refund_requested": true,
+        "urgency": 1,
+        "frustration": 1
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.97)",
+            "raw_actual": 0.97,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.19 (diff: 0.19)",
+            "raw_actual": 1.19,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "0.90 (diff: 0.10)",
+            "raw_actual": 0.9,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "short_001",
+      "category": "short",
+      "message": "refund now",
+      "expected": {
+        "department": "billing",
+        "refund_requested": true,
+        "urgency": 1
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.98)",
+            "raw_actual": 0.98,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "2.00 (diff: 1.00)",
+            "raw_actual": 2.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "2.00 (diff: 1.00)",
+            "raw_actual": 2.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "short_002",
+      "category": "short",
+      "message": "where's my order",
+      "expected": {
+        "department": "orders",
+        "urgency": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "1.48 (diff: 1.48)",
+            "raw_actual": 1.48,
+            "correct": false,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "1.00 (diff: 1.00)",
+            "raw_actual": 1.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "emotional_001",
+      "category": "emotional",
+      "message": "I am absolutely furious. This is the worst experience I've ever had with any company. Fix this NOW or I'm never buying from you again.",
+      "expected": {
+        "frustration": 2,
+        "escalation_required": true,
+        "churn_risk": 2
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "frustration": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (0.68)",
+            "raw_actual": 0.68,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "churn_risk": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "frustration": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "escalation_required": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "churn_risk": {
+            "expected": 2,
+            "actual": "2.00 (diff: 0.00)",
+            "raw_actual": 2.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "emotional_002",
+      "category": "emotional",
+      "message": "I'm really sorry to bother you, I know you're probably busy, but I had a small question about my order whenever you get a chance, no rush at all!",
+      "expected": {
+        "frustration": 0,
+        "urgency": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "padding_001",
+      "category": "irrelevant_padding",
+      "message": "So I was at the grocery store earlier and then I remembered I needed to message you. Anyway, my package hasn't arrived and it was supposed to be here two days ago.",
+      "expected": {
+        "department": "orders",
+        "urgency": 1
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.07 (diff: 0.07)",
+            "raw_actual": 1.07,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "orders",
+            "raw_actual": "orders",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 1,
+            "actual": "1.00 (diff: 0.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "padding_002",
+      "category": "irrelevant_padding",
+      "message": "Quick one \u2014 by the way I love your new logo, but also I was charged $15 twice this week, can you check?",
+      "expected": {
+        "department": "billing",
+        "refund_requested": false
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.06)",
+            "raw_actual": 0.06,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "billing",
+            "actual": "billing",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "refund_requested": {
+            "expected": false,
+            "actual": "False (0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "obvious_001",
+      "category": "obvious",
+      "message": "I want a full refund for order #7789, it was the wrong size.",
+      "expected": {
+        "department": "orders",
+        "refund_requested": true,
+        "issue_type": "wrong_item"
+      },
+      "ambiguous_multi_valid": {
+        "department": [
+          "orders",
+          "billing"
+        ]
+      },
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "billing (multi-valid: orders, billing)",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": true
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (0.99)",
+            "raw_actual": 0.99,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "wrong_item",
+            "actual": "wrong_item",
+            "raw_actual": "wrong_item",
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "orders",
+            "actual": "billing (multi-valid: orders, billing)",
+            "raw_actual": "billing",
+            "correct": true,
+            "is_ambiguous_match": true
+          },
+          "refund_requested": {
+            "expected": true,
+            "actual": "True (1.00)",
+            "raw_actual": 1.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "issue_type": {
+            "expected": "wrong_item",
+            "actual": "wrong_item",
+            "raw_actual": "wrong_item",
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "obvious_002",
+      "category": "obvious",
+      "message": "How do I reset my password?",
+      "expected": {
+        "department": "account",
+        "urgency": 0,
+        "frustration": 0
+      },
+      "ambiguous_multi_valid": {},
+      "jev": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "account",
+            "raw_actual": "account",
+            "correct": true,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "1.00 (diff: 1.00)",
+            "raw_actual": 1.0,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "0.00 (diff: 0.00)",
+            "raw_actual": 0.0,
+            "correct": true,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": null
+      },
+      "llm": {
+        "evaluations": {
+          "department": {
+            "expected": "account",
+            "actual": "Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kpq80hnvec8bt6bh3vn28301` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198796, Requested 1840. Please try again in 4m34.752s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+            "raw_actual": null,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "urgency": {
+            "expected": 0,
+            "actual": "Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kpq80hnvec8bt6bh3vn28301` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198796, Requested 1840. Please try again in 4m34.752s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+            "raw_actual": null,
+            "correct": false,
+            "is_ambiguous_match": false
+          },
+          "frustration": {
+            "expected": 0,
+            "actual": "Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kpq80hnvec8bt6bh3vn28301` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198796, Requested 1840. Please try again in 4m34.752s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+            "raw_actual": null,
+            "correct": false,
+            "is_ambiguous_match": false
+          }
+        },
+        "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kpq80hnvec8bt6bh3vn28301` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198796, Requested 1840. Please try again in 4m34.752s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+      }
+    }
+  ]
+}

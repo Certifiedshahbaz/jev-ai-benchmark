@@ -397,24 +397,42 @@ class AccuracyBenchmarkRunner:
 
         project_root = Path(__file__).resolve().parent.parent.parent.parent
         results_dir = project_root / "data" / "benchmark-results"
-        if not results_dir.exists():
-            return None
-        files = sorted(results_dir.glob("accuracy_run_*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
-        for f in files:
+        if results_dir.exists():
+            files = sorted(results_dir.glob("accuracy_run_*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+            for f in files:
+                try:
+                    with open(f, "r", encoding="utf-8") as fp:
+                        data = json.load(fp)
+                        if "jev" in data and "llm" in data and data.get("total_cases", 0) >= 40:
+                            return {
+                                "status": "success",
+                                "total_cases": data.get("total_cases", 49),
+                                "duration_seconds": data.get("duration_seconds", 0.0),
+                                "results_file": str(f),
+                                "jev": data["jev"],
+                                "llm": data["llm"],
+                            }
+                except Exception:
+                    continue
+
+        # Fallback to bundled seed_benchmark.json for zero-config production deployments
+        seed_path = Path(__file__).resolve().parent / "seed_benchmark.json"
+        if seed_path.exists():
             try:
-                with open(f, "r", encoding="utf-8") as fp:
-                    data = json.load(fp)
-                    if "jev" in data and "llm" in data and data.get("total_cases", 0) >= 40:
+                with open(seed_path, "r", encoding="utf-8") as fp:
+                    seed_data = json.load(fp)
+                    if "jev" in seed_data and "llm" in seed_data:
                         return {
                             "status": "success",
-                            "total_cases": data.get("total_cases", 49),
-                            "duration_seconds": data.get("duration_seconds", 0.0),
-                            "results_file": str(f),
-                            "jev": data["jev"],
-                            "llm": data["llm"],
+                            "total_cases": seed_data.get("total_cases", 49),
+                            "duration_seconds": seed_data.get("duration_seconds", 0.0),
+                            "results_file": str(seed_path),
+                            "jev": seed_data["jev"],
+                            "llm": seed_data["llm"],
                         }
             except Exception:
-                continue
+                pass
+
         return None
 
 
