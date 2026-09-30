@@ -1,0 +1,26 @@
+# =============================================================================
+# SERALI JEV WORKFORCE LAB — Backend Dependencies
+# =============================================================================
+
+# Web framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+
+# TypeSafe official SDK (with HTTP/2 support for concurrent benchmarks)
+typesafe-sdk[http2]
+
+# LLM baseline (OpenAI-compatible client — works with Groq, OpenAI, Together, etc.)
+openai>=1.30.0
+
+# Data models & config
+pydantic>=2.0
+pydantic-settings>=2.0
+
+# Environment
+python-dotenv
+
+# HTTP client (used by TypeSafe SDK internally, also useful for health checks)
+httpx
+
+# Statistics & metrics
+numpy
