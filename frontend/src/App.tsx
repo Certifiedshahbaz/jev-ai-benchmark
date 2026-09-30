@@ -165,6 +165,8 @@ interface BenchmarkProgress {
   latest_result?: AccuracyBenchmarkData | null;
 }
 
+const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+
 export default function App() {
   const [selectedPreset, setSelectedPreset] = useState(0);
   const [mode, setMode] = useState<string>("B");
@@ -187,7 +189,7 @@ export default function App() {
   const [expandedFields, setExpandedFields] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    fetch('/api/health')
+    fetch(`${API_BASE}/api/health`)
       .then(res => res.json())
       .then(data => setBackendHealth({
         status: data.status,
@@ -196,7 +198,7 @@ export default function App() {
       }))
       .catch(() => setBackendHealth({ status: "offline" }));
 
-    fetch('/api/benchmark/accuracy/latest')
+    fetch(`${API_BASE}/api/benchmark/accuracy/latest`)
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (data) setAccuracyData(data);
@@ -221,7 +223,7 @@ export default function App() {
         parsedContext = JSON.parse(contextJson);
       }
 
-      const res = await fetch('/api/analyze', {
+      const res = await fetch(`${API_BASE}/api/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -262,7 +264,7 @@ export default function App() {
 
     try {
       // 1. Trigger non-blocking background benchmark run
-      const res = await fetch('/api/benchmark/accuracy/start', {
+      const res = await fetch(`${API_BASE}/api/benchmark/accuracy/start`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -274,7 +276,7 @@ export default function App() {
       // 2. Poll progress every 800ms
       const pollTimer = setInterval(async () => {
         try {
-          const progRes = await fetch('/api/benchmark/accuracy/progress');
+          const progRes = await fetch(`${API_BASE}/api/benchmark/accuracy/progress`);
           if (!progRes.ok) return;
           const prog: BenchmarkProgress = await progRes.json();
           setAccuracyProgress(prog);
@@ -285,7 +287,7 @@ export default function App() {
             if (prog.latest_result) {
               setAccuracyData(prog.latest_result);
             } else {
-              const latestRes = await fetch('/api/benchmark/accuracy/latest');
+              const latestRes = await fetch(`${API_BASE}/api/benchmark/accuracy/latest`);
               if (latestRes.ok) {
                 const latestData: AccuracyBenchmarkData = await latestRes.json();
                 setAccuracyData(latestData);
